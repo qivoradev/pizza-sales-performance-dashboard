@@ -3,6 +3,8 @@
 Interactive Business Intelligence dashboard yang dibangun menggunakan Google Looker Studio untuk mengevaluasi kinerja penjualan tahunan, menganalisis pola operasional jam sibuk (peak hours), serta meninjau kontribusi menu dan kategori pizza terhadap total pendapatan.
 
 Link Dashboard Interaktif: https://datastudio.google.com/reporting/81574dad-5d2d-4a15-aafb-eefb54548a3e
+Link Dataset / Spreadsheet: https://docs.google.com/spreadsheets/d/1lT0tvBmZi7sswTzVoYQziJopoOdlBn5c/edit?usp=sharing&ouid=103313291434112811548&rtpof=true&sd=true
+
 
 
 <img width="487" height="377" alt="image" src="https://github.com/user-attachments/assets/3796a228-1677-4d5c-8af4-a43cbd412148" />
