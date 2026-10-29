@@ -1,100 +1,74 @@
-# 🍕 Pizza Sales Performance & Operational Analytics Dashboard
+# Pizza Sales Performance and Operational Analytics Dashboard
 
-[![Looker Studio](https://img.shields.io/badge/Looker%20Studio-Live%20Dashboard-blue?logo=google)](LINK_DASHBOARD_LOOKER_STUDIO_KAMU)
-[![Dataset](https://img.shields.io/badge/Dataset-Maven%20Analytics-green)](#about-the-dataset)
-[![Status](https://img.shields.io/badge/Project%20Status-Completed-success)](#)
+Interactive Business Intelligence dashboard yang dibangun menggunakan Google Looker Studio untuk mengevaluasi kinerja penjualan tahunan, menganalisis pola operasional jam sibuk (peak hours), serta meninjau kontribusi menu dan kategori pizza terhadap total pendapatan.
 
-Interactive Business Intelligence dashboard yang dibangun menggunakan **Google Looker Studio** untuk mengevaluasi kinerja penjualan tahunan, mengidentifikasi pola jam sibuk operasional (*peak hours*), serta menganalisis kontribusi produk dan kategori menu pizza terhadap total pendapatan.
-
-🔗 **[Klik di Sini untuk Mengakses Live Interactive Dashboard](LINK_DASHBOARD_LOOKER_STUDIO_KAMU)**
-
----
-
-## 📌 Pratinjau Dashboard
-
-<img width="487" height="377" alt="image" src="https://github.com/user-attachments/assets/d13f615e-34b6-4f03-b687-02964630f780" />
+Link Dashboard Interaktif: https://datastudio.google.com/reporting/81574dad-5d2d-4a15-aafb-eefb54548a3e
 
 
----
+<img width="487" height="377" alt="image" src="https://github.com/user-attachments/assets/3796a228-1677-4d5c-8af4-a43cbd412148" />
 
-## 🎯 Latar Belakang & Pertanyaan Bisnis (Business Questions)
 
-Manajemen restoran pizza membutuhkan visibilitas menyeluruh terhadap dinamika transaksi harian dan performa produk untuk menjawab 3 tantangan bisnis utama:
 
-1. **Efisiensi Operasional & Tenaga Kerja:** Kapan jam sibuk (*rush hours*) terjadi, dan bagaimana restoran dapat menjadwalkan staf dapur serta kurir secara presisi untuk meminimalkan waktu tunggu (*turnaround time*)?
-2. **Kinerja Produk & Risiko Portofolio:** Menu pizza mana yang menjadi motor utama pendapatan (*revenue driver*), dan apakah performa penjualan terlalu bergantung pada kategori tertentu?
-3. **Peluang Monetisasi Jam Sepi:** Bagaimana struktur nilai pesanan rata-rata (*Average Order Value* / AOV) pelanggan, dan di rentang waktu mana terdapat kapasitas oven yang belum terutilisasi maksimal?
+## Latar Belakang dan Pertanyaan Bisnis
 
----
+Manajemen restoran memerlukan visibilitas menyeluruh terhadap dinamika transaksi harian dan performa produk untuk menjawab beberapa tantangan bisnis:
 
-## 📊 Ringkasan Metrik Utama (Key Performance Indicators)
+* Efisiensi Operasional: Mengetahui jam operasional tersibuk (rush hours) agar penjadwalan staf dapur dan kurir dapat disesuaikan untuk memangkas waktu tunggu pesanan.
+* Kinerja Produk: Mengetahui varian menu yang menjadi penggerak utama omzet dan memastikan apakah portofolio menu memiliki ketergantungan pada kategori tertentu.
+* Peluang Penjualan: Menganalisis nilai rata-rata transaksi (Average Order Value) serta mengidentifikasi rentang waktu yang belum terutilisasi maksimal.
 
-| Metrik KPI | Nilai | Penjelasan Bisnis |
-| :--- | :---: | :--- |
-| **Total Revenue** | **$817,860.05** | Total akumulasi pendapatan kotor sepanjang tahun berjalan |
-| **Total Pizzas Sold** | **49,574** | Volume seluruh loyang pizza yang berhasil diproduksi dan terjual |
-| **Total Orders** | **21,350** | Jumlah transaksi unik (*distinct order IDs*) yang tercatat |
-| **Average Order Value (AOV)** | **$38.31** | Rata-rata nilai belanja per transaksi pelanggan (`Revenue / Orders`) |
+## Ringkasan Metrik Utama
 
-> **Rasio Pembelian:** Dengan rasio sekitar **2.3 pizza per pesanan** ($49,574 / 21,350$), sebagian besar transaksi pelanggan merupakan pesanan multiproduk atau ukuran keluarga (*sharing meal*), bukan transaksi personal tunggal.
+Berdasarkan data operasional setahun penuh, berikut ringkasan metrik performa utama:
 
----
+* Total Revenue: $817.860,05 (total akumulasi omzet penjualan)
+* Total Pizzas Sold: 49.574 loyang pizza terjual
+* Total Orders: 21.350 transaksi unik
+* Average Order Value (AOV): $38,31 per pesanan
 
-## 🔍 Temuan Utama & Storytelling Analisis
+Dengan rata-rata volume sekitar 2,3 loyang per transaksi, mayoritas pesanan pelanggan merupakan pesanan kelompok atau ukuran keluarga (sharing meal), bukan konsumsi personal tunggal.
 
-### 1. Pola Beban Operasional: Fenomena Jam Sibuk Ganda (*The Two-Rush Pattern*)
-Distribusi volume pesanan per jam (*Peak Ordering Hours*) memperlihatkan siklus kerja yang konsisten setiap harinya:
-* **Gelombang Makan Siang (*Lunch Rush*):** Lonjakan volume dimulai pukul 11:00 dan mencapai titik puncak pada pukul **12:00–13:00** (~2,500 pesanan per jam).
-* **Fase Perlambatan (*Afternoon Dip*):** Terjadi penurunan aktivitas tajam antara pukul **14:00–16:00** (hanya sekitar 1,400 pesanan per jam).
-* **Gelombang Makan Malam (*Dinner Rush*):** Beban kerja kembali melonjak stabil mulai pukul 16:00 hingga puncaknya pada pukul **17:00–18:00** sebelum melandai menjelang penutupan restoran di pukul 23:00.
+## Analisis dan Insight Bisnis
 
-### 2. Diversifikasi Kategori Produk yang Sehat (*Balanced Mix*)
-Pangsa pasar pendapatan per kategori menunjukkan keseimbangan yang sangat kuat:
-* **Classic:** 26.9% ($~220K)
-* **Supreme:** 25.5% ($~208K)
-* **Chicken:** 24.0% ($~196K)
-* **Veggie:** 23.7% ($~193K)
+### Pola Jam Sibuk Operasional (Peak Ordering Hours)
 
-*Insight:* Bisnis tidak rentan terhadap risiko konsentrasi produk (*single-point failure*). Minat konsumen terhadap kategori vegetarian (*Veggie*) hampir seimbang dengan kategori daging dan ayam, mengindikasikan segmen pelanggan yang beragam.
+Distribusi waktu transaksi memperlihatkan pola beban kerja ganda yang berulang setiap harinya:
 
-### 3. Varian Menu Andalan (*Top Revenue Drivers*)
-Tiga varian pizza penyumbang omzet terbesar didominasi oleh olahan berbasis ayam:
-1. **The Thai Chicken Pizza** — `$43,434.25`
-2. **The Barbecue Chicken Pizza** — `$42,768.00`
-3. **The California Chicken Pizza** — `$41,409.50`
-4. **The Classic Deluxe Pizza** — `$38,180.50`
-5. **The Spicy Italian Pizza** — `$34,831.25`
+* Gelombang Makan Siang (Lunch Rush): Lonjakan pesanan dimulai pukul 11.00 dan memuncak pada pukul 12.00–13.00 dengan volume mencapai sekitar 2.500 pesanan per jam.
+* Penurunan Jam Sore (Afternoon Dip): Aktivitas pesanan mengalami penurunan signifikan pada rentang waktu 14.00–16.00 dengan rata-rata 1.400 pesanan per jam.
+* Gelombang Makan Malam (Dinner Rush): Pesanan kembali meningkat stabil mulai pukul 16.00 hingga puncaknya pada pukul 17.00–18.00 sebelum akhirnya melandai menuju jam tutup operasional di pukul 23.00.
 
-*Insight:* Bahan baku ayam olahan serta saus racikan khusus (*Thai & BBQ sauce*) merupakan aset paling bernilai di dapur yang wajib dijaga konsistensi rasa dan ketersediaannya.
+### Distribusi Kategori Penjualan
 
----
+Portofolio penjualan menu terbagi sangat seimbang di seluruh kategori:
 
-## 💡 Rekomendasi Strategis (Actionable Recommendations)
+* Classic: 26,9%
+* Supreme: 25,5%
+* Chicken: 24,0%
+* Veggie: 23,7%
 
-1. **Optimasi Jadwal Kerja Staf (*Staggered Shift Scheduling*):**
-   * Alokasikan kapasitas maksimal koki perakitan (*prep cook*) dan kurir pengantaran pada dua jendela waktu krusial: **11:30–13:30** dan **16:30–18:30**.
-   * Gunakan sistem *split shift* atau pekerja paruh waktu di jam sibuk untuk mengendalikan biaya tenaga kerja tanpa mengorbankan kecepatan layanan.
+Keseimbangan ini menunjukkan diversifikasi menu yang sehat dan bisnis tidak bertumpu pada satu kategori saja. Permintaan pada kategori vegetarian (Veggie) yang mencapai hampir seperempat total omzet membuktikan adanya basis pelanggan yang kuat di luar menu olahan daging atau ayam.
 
-2. **Monetisasi Waktu Sepi (*Off-Peak Revenue Generation*):**
-   * Buat program promo khusus jam 14:00–16:00, seperti paket hemat *"Afternoon Pizza Slice & Drink Combo"*, untuk memacu utilisasi oven dan tenaga kerja dapur yang menganggur di sela jam makan utama.
+### Varian Menu Terlaris (Top 5 by Revenue)
 
-3. **Manajemen Rantai Pasok Bahan Baku Utama (*Inventory Control*):**
-   * Terapkan tingkat persediaan pengaman (*safety stock*) yang lebih ketat pada pasokan fillet ayam dan bahan baku pendukung menu *Thai Chicken* dan *BBQ Chicken* guna mencegah potensi kehilangan penjualan (*stockout*) saat lonjakan pesanan.
+Varian dengan kontribusi omzet terbesar didominasi oleh menu berbahan dasar ayam:
 
----
+1. The Thai Chicken Pizza: $43.434,25
+2. The Barbecue Chicken Pizza: $42.768,00
+3. The California Chicken Pizza: $41.409,50
+4. The Classic Deluxe Pizza: $38.180,50
+5. The Spicy Italian Pizza: $34.831,25
 
-## 🛠️ Alat & Metodologi
+Bahan baku ayam olahan dan saus khusus (Thai dan BBQ) memegang peranan krusial terhadap stabilitas pendapatan restoran sehingga kontinuitas pasokannya perlu diprioritaskan.
 
-* **Google Sheets / Microsoft Excel:** Pemeriksaan konsistensi data (*data cleaning*), standarisasi tipe data, dan validasi rekonsiliasi angka.
-* **Google Looker Studio:** Desain visualisasi interaktif, implementasi *calculated fields*, integrasi *cross-filtering*, dan penataan tata letak bertema kartu analitik modern.
+## Rekomendasi Strategis
 
----
+* Penjadwalan Staf Bertahap (Staggered Shift): Fokuskan kapasitas penuh koki dan staf perakitan di jam 11.30–13.30 dan 16.30–18.30 untuk mempercepat pemrosesan pesanan di jam sibuk.
+* Utilisasi Jam Sepi: Buat promosi paket hemat personal atau pizza slice dan minuman di rentang jam 14.00–16.00 untuk mengoptimalkan penggunaan oven di luar jam makan utama.
+* Pengamanan Pasokan Bahan Baku: Terapkan batas aman stok yang lebih ketat untuk pasokan fillet ayam dan bumbu saus utama guna mencegah risiko kehabisan bahan saat jam sibuk.
 
-## 📂 Struktur Repository
+## Alat yang Digunakan
 
-```text
-├── assets/
-│   └── dashboard-preview.png     # Screenshot dashboard untuk dokumentasi
-├── data/
-│   └── pizza_sales_master.csv    # Dataset mentah transaksi penjualan
-└── README.md                     # Dokumentasi studi kasus proyek
+* Microsoft Excel / Google Sheets: Pembersihan data, standarisasi tipe data, dan validasi rekonsiliasi angka.
+* Google Looker Studio: Desain dashboard interaktif, pembuatan visualisasi data, calculated fields, dan filter interaktif.
+
